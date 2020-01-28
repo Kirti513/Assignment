@@ -1,0 +1,23 @@
+<p>employe-list works!</p>
+<div *ngIf="info.length > 0">
+<table border="2">
+  <tr>
+    <th>Id</th>
+    <th>NAME</th>
+    <th>SALARY</th>
+    <th>DEPARTMENT</th>
+  </tr>
+
+
+  <tr *ngFor="let item of info">
+    <td>{{ item.id  }}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.salary}}</td>
+    <td>{{ item.department}}</td>
+  </tr>
+</table>
+</div>
+<!-- <p *ngIf="info.length <= 0">No posts added yet!</p> -->
+
+
+
