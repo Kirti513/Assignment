@@ -1,0 +1,17 @@
+
+<form [formGroup]='loginForm' (ngSubmit)='onSubmit()'>
+  <!-- <input type='email' placeholder="Email" [(ngModel)]="enterEmail"> -->
+
+  <input placeholder="Email" formControlName='email' required>
+  <p *ngIf='loginForm.controls.email.errors?.required'>Email is required!!</p>
+
+  <input placeholder="Password" formControlName='password' type='password' required>
+  <p *ngIf='loginForm.controls.password.errors?.required'>Password is required!!</p>
+
+  <button type='submit' >Login</button>
+  <br>
+  <br>
+  <p>If not register sign in here</p>
+  <a routerLink='/register'>SignIn</a>
+
+</form>

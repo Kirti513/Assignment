@@ -1,0 +1,26 @@
+
+<form [formGroup]='form' (ngSubmit)='onSubmit()'>
+  <!-- <input type='email' placeholder="Email" [(ngModel)]="enterEmail"> -->
+  <input placeholder="Id" formControlName="id" required>
+  <br>
+  <input placeholder="Username" formControlName="name" required>
+  <div *ngIf='form.controls.name.errors?.pattern'>Enter valid name (Special characters and numeri are not allowed)</div>
+  <div *ngIf='form.controls.name.errors?.required'>Name is required </div>
+  <br>
+  <input placeholder="Mobile" formControlName="mobile" required>
+  <div *ngIf='form.controls.mobile.errors?.required'>Enter Mobile Number</div>
+  <div *ngIf='form.controls.mobile.errors?.pattern'>Enter a valid Mobile number</div>
+  <!-- <div *ngIf='form.controls.mobile.errors?.maxlength'>Enter a valid Mobile Number</div> -->
+  <!-- <div *ngIf='form.controls.mobile.errors?.minlength'>Enter a valid Mobile Number</div> -->
+  <br>
+  <input placeholder="Email" formControlName='email' required>
+  <div *ngIf='form.controls.email.errors?.required'>Email is required!!</div>
+  <div *ngIf='form.controls.email.errors?.pattern'>Enter valid email!!</div>
+  <br>
+  <input placeholder="Password" formControlName='password' type='password' required>
+  <div *ngIf='form.controls.password.errors?.pattern'>Enter password in valid pattern <br> ( uppercase value ,lowercase value,special character and numeric value</div>
+  <div *ngIf='form.controls.password.errors?.required'>Password is required!!</div>
+  <br>
+  <button type='submit' >Register</button>
+
+</form>
